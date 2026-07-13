@@ -1,0 +1,11 @@
+# Images belong here: photos, icons, logos, favicons, Open Graph images.
+#
+# Tips for Core Web Vitals:
+#   - Use modern formats (.webp or .avif) with a .jpg/.png fallback if needed.
+#   - Always set width/height (or aspect-ratio) on <img> to avoid layout shift.
+#   - Use loading="lazy" for below-the-fold images; NOT on the hero/LCP image.
+#   - Provide a favicon.ico, favicon.svg and apple-touch-icon.png (referenced
+#     in every page <head>).
+#
+# This file only exists so Git tracks the otherwise-empty folder. It can be
+# deleted once real images are added.

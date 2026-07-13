@@ -1,0 +1,35 @@
+<!--
+  Reusable site header.
+
+  There is no build step, so components can't be auto-included. Copy this
+  markup into the <body> of each page (or paste it once and keep pages in
+  sync by hand). Set aria-current="page" on the link for the current page.
+-->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="/">
+      <span class="site-header__brand-name">Premier Windows</span>
+      <span class="site-header__brand-sub">Glazing</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="Open menu"
+      data-nav-toggle
+    >
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-nav>
+      <ul class="primary-nav__list">
+        <li><a href="/replacement/">Replacement Windows</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

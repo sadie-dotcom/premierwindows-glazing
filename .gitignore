@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# Premier Windows — Glazing (.gitignore)
+# Static site, no build step. Keep the repo to source files only.
+# ---------------------------------------------------------------------------
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Editors / IDEs
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Logs & temp
+*.log
+*.tmp
+
+# Environment / secrets (never commit these)
+.env
+.env.*
+
+# Node — only present if you ever add optional local tooling (linters, etc.).
+# The deployed site itself uses NO Node and NO build step.
+node_modules/
+
+# Cloudflare / Wrangler local state (not used, ignored defensively)
+.wrangler/
+.dev.vars
+
+# OS clutter
+*.orig

@@ -1,0 +1,9 @@
+# Self-hosted web fonts belong here.
+#
+# Prefer .woff2 (smallest, best supported). Reference them from
+# /assets/css/main.css with an @font-face block and set the --font-sans
+# custom property to the new family. Self-hosting (rather than Google Fonts)
+# avoids a third-party request and is faster for Core Web Vitals.
+#
+# This file only exists so Git tracks the otherwise-empty folder. It can be
+# deleted once real font files are added.

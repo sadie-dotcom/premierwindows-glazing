@@ -1,0 +1,451 @@
+/* ==========================================================================
+   Premier Windows — Glazing
+   Shared stylesheet for every page on glazing.premierwindows.com.au
+
+   Structure (edit in place, keep the ordering):
+   1. Design tokens (CSS custom properties)
+   2. Modern reset
+   3. Base elements & typography
+   4. Accessibility helpers
+   5. Layout (container, section, grid)
+   6. Components (header, nav, footer, buttons)
+   7. Utilities
+
+   Written mobile-first. Larger screens are layered on with min-width media
+   queries. No build step — this file is served as-is.
+   ========================================================================== */
+
+/* 1. Design tokens
+   ------------------------------------------------------------------------- */
+:root {
+  /* Brand colour palette — adjust to match Premier Windows branding */
+  --color-primary: #0a2540;
+  --color-primary-dark: #061a2e;
+  --color-accent: #1e88e5;
+  --color-accent-dark: #1565c0;
+
+  --color-text: #1a1a1a;
+  --color-text-muted: #55606b;
+  --color-heading: #0a2540;
+
+  --color-bg: #ffffff;
+  --color-bg-alt: #f4f7fa;
+  --color-border: #dce3ea;
+
+  --color-focus: #1e88e5;
+
+  /* Typography — system font stack keeps things instant with zero web-font
+     cost. Drop in a self-hosted font from /assets/fonts/ when required and
+     update --font-sans. */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+  --font-size-base: 1rem;      /* 16px */
+  --line-height-base: 1.6;
+
+  /* Fluid type scale (min → max) via clamp() */
+  --font-size-lead: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+  --font-size-h1: clamp(2rem, 1.4rem + 3vw, 3.25rem);
+  --font-size-h2: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  --font-size-h3: clamp(1.25rem, 1.1rem + 0.8vw, 1.6rem);
+
+  /* Spacing scale */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+
+  /* Layout */
+  --container-max: 72rem;      /* ~1152px */
+  --container-pad: 1.25rem;
+
+  /* Effects */
+  --radius: 0.5rem;
+  --shadow-sm: 0 1px 2px rgba(10, 37, 64, 0.08);
+  --shadow-md: 0 6px 20px rgba(10, 37, 64, 0.12);
+
+  --transition: 200ms ease;
+
+  --header-height: 4rem;
+}
+
+/* 2. Modern reset
+   ------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: var(--color-accent-dark);
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.15em;
+}
+
+/* 3. Base elements & typography
+   ------------------------------------------------------------------------- */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-heading);
+  line-height: 1.2;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+p {
+  text-wrap: pretty;
+}
+
+.lead {
+  font-size: var(--font-size-lead);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--color-bg-alt);
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+}
+
+/* 4. Accessibility helpers
+   ------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-md);
+  top: -100%;
+  z-index: 999;
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: top var(--transition);
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* 5. Layout
+   ------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.section {
+  padding-block: var(--space-2xl);
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+/* Simple responsive auto-grid; add .grid to a wrapper */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+/* 6. Components
+   ------------------------------------------------------------------------- */
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  gap: var(--space-md);
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.site-header__brand-name {
+  font-size: 1.125rem;
+}
+
+.site-header__brand-sub {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Nav toggle (hamburger) — visible on mobile only */
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.6rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.nav-toggle__bar {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-heading);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Primary nav — collapsed under the header on mobile */
+.primary-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  display: none;
+}
+
+.primary-nav.is-open {
+  display: block;
+}
+
+.primary-nav__list {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xs) var(--container-pad) var(--space-md);
+}
+
+.primary-nav__list a {
+  display: block;
+  padding: var(--space-sm) 0;
+  color: var(--color-heading);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.primary-nav__list a[aria-current="page"] {
+  color: var(--color-accent-dark);
+}
+
+/* Desktop nav */
+@media (min-width: 48rem) {
+  .nav-toggle {
+    display: none;
+  }
+  .primary-nav {
+    position: static;
+    display: block;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .primary-nav__list {
+    flex-direction: row;
+    gap: var(--space-lg);
+    padding: 0;
+  }
+  .primary-nav__list a {
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+  }
+  .primary-nav__list a:hover,
+  .primary-nav__list a[aria-current="page"] {
+    border-bottom-color: var(--color-accent);
+  }
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color var(--transition), border-color var(--transition),
+    color var(--transition), transform var(--transition);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button--primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+.button--primary:hover {
+  background: var(--color-accent-dark);
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent);
+}
+.button--secondary:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Footer */
+.site-footer {
+  flex-shrink: 0;
+  background: var(--color-primary);
+  color: #cdd8e4;
+  padding-block: var(--space-xl);
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer__copy {
+  font-size: 0.9rem;
+}
+
+/* 7. Utilities
+   ------------------------------------------------------------------------- */
+.text-center { text-align: center; }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.flow > * + * { margin-top: var(--space-md); }

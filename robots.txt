@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glazing.premierwindows.com.au/sitemap.xml
