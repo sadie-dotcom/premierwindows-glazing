@@ -173,9 +173,31 @@ The page automatically inherits all shared styling and behaviour from
 | --- | --- | --- |
 | **Images** | `assets/images/` | Photos, icons, logos, favicons, OG images. Prefer `.webp`/`.avif`; always set `width`/`height`; use `loading="lazy"` for below-the-fold images (never the hero/LCP image). |
 | **Fonts** | `assets/fonts/` | Self-hosted `.woff2` files. Add an `@font-face` block in `main.css` and point `--font-sans` at it. Self-hosting is faster than Google Fonts. |
-| **Shared styles** | `assets/css/main.css` | Design tokens live at the top as CSS custom properties — change brand colours, spacing and type there. |
-| **Shared scripts** | `assets/js/main.js` | Keep it vanilla, small and deferred. |
+| **Shared styles** | `assets/css/main.css` | Base styles for the temporary homepage. Design tokens live at the top as CSS custom properties. |
+| **Shared scripts** | `assets/js/main.js` | Base site JS. Keep it vanilla, small and deferred. |
 | **Reusable markup** | `components/` | Copy/paste snippets (no build step to include them automatically). |
+
+---
+
+## Premier landing-page design system
+
+Campaign / Google Ads landing pages (e.g. `/replacement/`) share a dedicated,
+self-contained design system built from the approved Premier concept:
+
+| Asset | Purpose |
+| --- | --- |
+| `assets/css/premier.css` | Full Premier design system — brand tokens (navy `#003861`, deep navy `#002A4F`, light blue `#73B4BA`, sage `#80976D`), Lato/Karla `@font-face`, header/hero/form/comparison/FAQ/footer components, responsive rules. |
+| `assets/js/premier-lp.js` | Shared landing-page behaviour: 2-step quote form + validation, click-to-call tracking, GA4 events, Google Ads conversions, success-page redirect. |
+| `assets/fonts/` | Self-hosted `lato-black.woff2`, `karla-regular.woff2`, `karla-bold.woff2` (OFL, latin subset). |
+
+**To build another Premier landing page:** create `/<page>/index.html`, link
+`/assets/css/premier.css` + `/assets/js/premier-lp.js` (absolute paths work from
+any depth), reuse the existing markup/classes, and set the page-specific
+`<title>`, description, canonical and Open Graph tags.
+
+**Before go-live**, a developer replaces the tracking placeholders: `GA4_ID` and
+`AW_CONVERSION_ID` in the page `<head>`, and `AW_LEAD_LABEL` / `AW_CALL_LABEL` /
+`ENDPOINT` / `SUCCESS_URL` in `assets/js/premier-lp.js`.
 
 ---
 
