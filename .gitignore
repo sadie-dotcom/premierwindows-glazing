@@ -45,3 +45,7 @@ node_modules/
 
 # OS clutter
 *.orig
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
