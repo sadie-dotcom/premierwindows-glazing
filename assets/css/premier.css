@@ -179,6 +179,18 @@ legend,.flabel{font-weight:700;font-size:13px;color:var(--navy);margin:14px 0 8p
 .seccta{text-align:center;margin-top:38px}
 .seccta .hint{display:block;color:var(--muted);font-size:13px;margin-top:11px}
 
+/* ---------- PRODUCT RANGE (tiles with real product photos) ---------- */
+.prodgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.prod{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:box-shadow .18s,transform .18s,border-color .18s}
+.prod:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:#BFD9DD}
+.prod .pimg{position:relative;aspect-ratio:3/2;background:var(--navy-deep)}
+.prod .pimg img{width:100%;height:100%;object-fit:cover}
+.prod .plabel{position:absolute;left:14px;bottom:14px;background:rgba(0,42,79,.82);color:#fff;border:1px solid rgba(115,180,186,.55);border-radius:20px;padding:6px 13px;font-size:12px;font-weight:700;letter-spacing:.02em}
+.prod .pbody{padding:18px 20px 22px}
+.prod h3{font-size:14.5px;letter-spacing:.02em;margin-bottom:6px}
+.prod p{color:var(--muted);font-size:13.5px}
+.rangenote{text-align:center;color:var(--muted);font-size:13.5px;margin-top:26px}
+
 /* ---------- COMPARISON ---------- */
 .tablewrap{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
 table{width:100%;border-collapse:collapse;font-size:14px}
@@ -287,7 +299,7 @@ details .a{padding:0 22px 20px;color:var(--muted);font-size:14.5px}
   .hero .wrap{padding-block:36px}
   .trustbar .wrap{grid-template-columns:1fr 1fr;gap:16px}
   .tstat{border-right:0}
-  .grid4,.grid3,.assure .wrap,.ftr .wrap{grid-template-columns:1fr 1fr}
+  .grid4,.grid3,.prodgrid,.assure .wrap,.ftr .wrap{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr;gap:28px}
   .step:not(:last-child)::after{display:none}
   .tel small{display:none}
@@ -311,7 +323,7 @@ details .a{padding:0 22px 20px;color:var(--muted);font-size:14.5px}
   body{padding-bottom:78px}
 }
 @media (max-width:560px){
-  .grid4,.grid3,.assure .wrap,.ftr .wrap,.steps{grid-template-columns:1fr}
+  .grid4,.grid3,.prodgrid,.assure .wrap,.ftr .wrap,.steps{grid-template-columns:1fr}
   .metrics{flex-wrap:wrap}
   .gwrap{gap:12px;padding:12px 14px}
   .gwrap .num{font-size:24px}
