@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Add one <url> block per public, indexable page. Keep in sync when adding pages.
-     Note: /replacement/ is a dedicated Google Ads landing page marked
-     noindex,follow, so it is intentionally excluded from the sitemap. -->
+<!-- Every page on this glazing subdomain is a dedicated Google Ads landing page
+     marked noindex,follow (the homepage "/" and /replacement/ included), so
+     there are intentionally no indexable URLs to list here. Add a <url> block
+     only when a genuinely indexable page is published. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://glazing.premierwindows.com.au/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 </urlset>

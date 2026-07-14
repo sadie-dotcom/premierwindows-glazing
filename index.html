@@ -46,7 +46,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/karla-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/karla-bold.woff2" crossorigin>
 
-<link rel="stylesheet" href="/assets/css/premier.css">
+<link rel="stylesheet" href="/assets/css/premier.css?v=2">
 </head>
 <body>
 <a class="skip" href="#quote-form">Skip to quote form</a>
@@ -56,7 +56,7 @@
   <div class="wrap">
     <span>Winter offer — up to <b>$1,500 Bunnings gift card</b> with your order</span>
     <span class="chip">10 left</span>
-    <a href="/terms">See terms</a>
+    <a href="https://premierwindows.com.au/terms-conditions/" target="_blank" rel="noopener">See terms</a>
   </div>
 </div>
 
@@ -435,12 +435,77 @@
       <p class="finaltel">Or call us now: <a href="tel:1300596405" data-track="phone">1300 596 405</a></p>
     </div>
 
+    <!-- Second quote form — same component + shared premier-lp.js as the hero form.
+         Uses [data-quote-form] + [data-next]/[data-back] and unique field ids so
+         both forms coexist and submit identically (redirect to /thank-you/). -->
     <div class="fcard">
-      <h2>Get my free quote</h2>
-      <p class="fstep">Takes about 60 seconds</p>
-      <p style="color:var(--muted);font-size:14px;margin:10px 0 18px">Tell us what you need and we'll call you back within 1 business hour with the next steps.</p>
-      <a class="btn btn-primary btn-block btn-lg" href="#quote-form">Start my free quote →</a>
-      <p class="callalt">Prefer to talk? Call <a href="tel:1300596405" data-track="phone">1300 596 405</a></p>
+      <form data-quote-form novalidate>
+        <div data-step="1">
+          <h2>Get my free quote</h2>
+          <p class="fstep">Step 1 of 2 · takes about 60 seconds</p>
+          <div class="progress"><i></i></div>
+
+          <fieldset>
+            <legend>What do you need?</legend>
+            <div class="choices">
+              <input type="radio" id="need-rep-2" name="replacing" value="Replacing windows" checked>
+              <label for="need-rep-2">Replacing windows</label>
+              <input type="radio" id="need-new-2" name="replacing" value="New build">
+              <label for="need-new-2">New build</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Project location</legend>
+            <div class="choices three">
+              <input type="radio" id="loc-perth-2" name="qty" value="Perth" checked>
+              <label for="loc-perth-2">Perth</label>
+              <input type="radio" id="loc-sw-2" name="qty" value="Southwest">
+              <label for="loc-sw-2">Southwest</label>
+              <input type="radio" id="loc-else-2" name="qty" value="Elsewhere">
+              <label for="loc-else-2">Elsewhere</label>
+            </div>
+          </fieldset>
+
+          <button type="button" class="btn btn-primary btn-block btn-lg" data-next style="margin-top:18px">Continue →</button>
+          <p class="micro">No obligation. We respond within 1 business hour.</p>
+          <p class="callalt">Prefer to talk now? Call <a href="tel:1300596405" data-track="phone">1300 596 405</a></p>
+        </div>
+
+        <div data-step="2" hidden>
+          <h2>Almost done</h2>
+          <p class="fstep">Step 2 of 2 · where should we send it?</p>
+          <div class="progress"><i style="width:100%"></i></div>
+
+          <div class="field">
+            <label class="sr-only" for="name-2">First name</label>
+            <input type="text" id="name-2" name="name" placeholder="First name" autocomplete="given-name" required>
+            <p class="err">Please enter your first name</p>
+          </div>
+          <div class="field">
+            <label class="sr-only" for="phone-2">Phone number</label>
+            <input type="tel" id="phone-2" name="phone" placeholder="Phone number" autocomplete="tel" inputmode="tel" required>
+            <p class="err">Please enter a valid phone number</p>
+          </div>
+          <div class="field">
+            <label class="sr-only" for="email-2">Email address</label>
+            <input type="email" id="email-2" name="email" placeholder="Email address" autocomplete="email" inputmode="email" required>
+            <p class="err">Please enter a valid email address</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:18px">Get my free quote →</button>
+          <button type="button" class="back" data-back>← Back</button>
+          <p class="micro">🔒 We respond within 1 business hour. By submitting you agree to be contacted by Premier Windows. Opt out anytime.</p>
+        </div>
+      </form>
+
+      <!-- Inline success (used only if SUCCESS_URL redirect is disabled) -->
+      <div class="success" hidden role="status" aria-live="polite">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2>Thank you</h2>
+        <p>Your free quote request is in. A local Premier specialist will call you within <strong>1 business hour</strong>.</p>
+        <p style="margin-top:14px"><a class="btn btn-outline" href="tel:1300596405" data-track="phone">Call us now instead</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -472,7 +537,7 @@
   <div class="ftbar">
     <div class="wrap">
       <span>© <span id="yr">2026</span> Premier Windows (WA) Pty Ltd · ABN 56 670 929 594</span>
-      <span><a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms &amp; Conditions</a></span>
+      <span><a href="https://premierwindows.com.au/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://premierwindows.com.au/terms-conditions/" target="_blank" rel="noopener">Terms &amp; Conditions</a></span>
     </div>
   </div>
 </footer>
@@ -518,6 +583,6 @@
 </script>
 
 <!-- Shared landing-page behaviour: 2-step form, validation, tracking hooks -->
-<script src="/assets/js/premier-lp.js" defer></script>
+<script src="/assets/js/premier-lp.js?v=2" defer></script>
 </body>
 </html>

@@ -266,6 +266,8 @@ details .a{padding:0 22px 20px;color:var(--muted);font-size:14.5px}
 .final .dotted{position:absolute;inset:0;opacity:.10}
 .final .wrap{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
 .final h2{color:#fff;font-size:clamp(26px,3.4vw,36px)}
+/* form/card headings keep the card style even inside the navy final section */
+.final .fcard h2{color:var(--navy);font-size:22px}
 .final .lead{color:#D3E3EA;margin-top:14px}
 .final .fl{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:22px}
 .final .fl li{display:flex;align-items:flex-start;gap:10px;color:#E7F1F4;font-size:14.5px}
