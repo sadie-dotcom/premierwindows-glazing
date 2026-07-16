@@ -46,7 +46,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/karla-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/karla-bold.woff2" crossorigin>
 
-<link rel="stylesheet" href="/assets/css/premier.css?v=4">
+<link rel="stylesheet" href="/assets/css/premier.css?v=5">
 </head>
 <body>
 <a class="skip" href="#quote-form">Skip to quote form</a>
@@ -71,9 +71,19 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.93.7 2.85a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.92.34 1.87.57 2.85.7A2 2 0 0 1 22 16.92z"/></svg>
         <span>1300 596 405<small>Speak to our local WA team</small></span>
       </a>
-      <a class="btn btn-primary" href="#quote-form">Get my free quote</a>
+      <a class="btn btn-primary" href="#quote-form"><span class="u-desktop">Book my free consultation</span><span class="u-mobile">Book consultation</span></a>
     </div>
   </div>
+  <nav class="secnav" aria-label="Page sections">
+    <div class="wrap">
+      <a href="#benefits">Benefits</a>
+      <a href="#comparison">Comparison</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faqs">FAQs</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 </header>
 
 <main id="top">
@@ -96,7 +106,7 @@
       <ul class="usp">
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Up to 74% less outside noise and up to 40% off energy bills</li>
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Full removal &amp; reinstall — most homes finished in 1–4 days</li>
-        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>10-year warranty · AS 2047 compliant · obligation-free quote</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>10-year warranty · AS 2047 compliant · free in-home consultation</li>
       </ul>
 
       <!-- Google Reviews — prominent -->
@@ -128,38 +138,64 @@
 
       <form id="quoteForm" novalidate>
         <div data-step="1">
-          <h2>Get my free quote</h2>
+          <h2>Book my free consultation</h2>
           <p class="fstep">Step 1 of 2 · about 60 seconds</p>
           <div class="progress"><i id="progressBar"></i></div>
 
           <fieldset>
-            <legend>What are you replacing?</legend>
+            <legend>What's your project?</legend>
             <div class="choices">
-              <input type="radio" id="r-alu" name="replacing" value="Aluminium windows" checked>
-              <label for="r-alu">Aluminium windows</label>
-              <input type="radio" id="r-tim" name="replacing" value="Timber windows">
-              <label for="r-tim">Timber windows</label>
-              <input type="radio" id="r-sgl" name="replacing" value="Single glazing">
-              <label for="r-sgl">Single glazing</label>
-              <input type="radio" id="r-not" name="replacing" value="Not sure">
-              <label for="r-not">Not sure</label>
+              <input type="radio" id="proj-rep" name="Project_Type" value="Replacing windows" checked>
+              <label for="proj-rep">Replacing windows</label>
+              <input type="radio" id="proj-new" name="Project_Type" value="New build">
+              <label for="proj-new">New build</label>
             </div>
           </fieldset>
 
           <fieldset>
-            <legend>Roughly how many windows?</legend>
-            <div class="choices three">
-              <input type="radio" id="n-1" name="qty" value="1-5">
-              <label for="n-1">1–5</label>
-              <input type="radio" id="n-2" name="qty" value="6-15" checked>
-              <label for="n-2">6–15</label>
-              <input type="radio" id="n-3" name="qty" value="16+">
-              <label for="n-3">16+</label>
+            <legend>Roughly how many windows/doors?</legend>
+            <div class="choices">
+              <input type="radio" id="size-1" name="Project_Size" value="1–2" checked>
+              <label for="size-1">1–2</label>
+              <input type="radio" id="size-2" name="Project_Size" value="3–5">
+              <label for="size-2">3–5</label>
+              <input type="radio" id="size-3" name="Project_Size" value="About half my house">
+              <label for="size-3">About half my house</label>
+              <input type="radio" id="size-4" name="Project_Size" value="My whole house">
+              <label for="size-4">My whole house</label>
+              <input type="radio" id="size-5" name="Project_Size" value="Not sure">
+              <label for="size-5">Not sure</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>How soon are you looking to start?</legend>
+            <div class="choices">
+              <input type="radio" id="when-1" name="Timeframe" value="Within 1 month" checked>
+              <label for="when-1">Within 1 month</label>
+              <input type="radio" id="when-2" name="Timeframe" value="1–3 months">
+              <label for="when-2">1–3 months</label>
+              <input type="radio" id="when-3" name="Timeframe" value="3–6 months">
+              <label for="when-3">3–6 months</label>
+              <input type="radio" id="when-4" name="Timeframe" value="Just exploring">
+              <label for="when-4">Just exploring</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>What matters most to you? <span class="opt">(optional — select all that apply)</span></legend>
+            <div class="choices checks">
+              <input type="checkbox" id="pri-1" name="Priorities" value="Improve home comfort">
+              <label for="pri-1">Improve home comfort</label>
+              <input type="checkbox" id="pri-2" name="Priorities" value="Reduce outside noise">
+              <label for="pri-2">Reduce outside noise</label>
+              <input type="checkbox" id="pri-3" name="Priorities" value="Improve security">
+              <label for="pri-3">Improve security</label>
             </div>
           </fieldset>
 
           <button type="button" class="btn btn-primary btn-block btn-lg" id="toStep2" style="margin-top:18px">Continue →</button>
-          <p class="micro">No obligation. No hard sell. Free measure &amp; quote.</p>
+          <p class="micro">No obligation. We respond within 1 business hour.</p>
           <p class="callalt">Prefer to talk now? Call <a href="tel:1300596405" data-track="phone">1300 596 405</a></p>
         </div>
 
@@ -169,27 +205,27 @@
           <div class="progress"><i style="width:100%"></i></div>
 
           <div class="field">
-            <label class="sr-only" for="name">First name</label>
-            <input type="text" id="name" name="name" placeholder="First name" autocomplete="given-name" required>
+            <label class="sr-only" for="first-name">First name</label>
+            <input type="text" id="first-name" name="First_Name" placeholder="First name" autocomplete="given-name" required>
             <p class="err">Please enter your first name</p>
           </div>
           <div class="field">
             <label class="sr-only" for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Phone number" autocomplete="tel" inputmode="tel" required>
+            <input type="tel" id="phone" name="Phone" placeholder="Phone number" autocomplete="tel" inputmode="tel" required>
             <p class="err">Please enter a valid phone number</p>
           </div>
           <div class="field">
             <label class="sr-only" for="email">Email address</label>
-            <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" inputmode="email" required>
+            <input type="email" id="email" name="Email" placeholder="Email address" autocomplete="email" inputmode="email" required>
             <p class="err">Please enter a valid email address</p>
           </div>
           <div class="field">
             <label class="sr-only" for="suburb">Suburb</label>
-            <input type="text" id="suburb" name="suburb" placeholder="Suburb" autocomplete="address-level2" required>
+            <input type="text" id="suburb" name="Suburb" placeholder="Suburb" autocomplete="address-level2" required>
             <p class="err">Please enter your suburb</p>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn" style="margin-top:18px">Get my free quote →</button>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn" style="margin-top:18px">Book my consultation →</button>
           <button type="button" class="back" id="backTo1">← Back</button>
           <p class="micro">🔒 We respond within 1 business hour. By submitting you agree to be contacted by Premier Windows. Opt out anytime.</p>
         </div>
@@ -199,7 +235,7 @@
       <div class="success" id="formSuccess" hidden role="status" aria-live="polite">
         <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
         <h2>Thank you</h2>
-        <p>Your free quote request is in. A local Premier specialist will call you within <strong>1 business hour</strong>.</p>
+        <p>Your consultation request is in. A local Premier specialist will call you within <strong>1 business hour</strong>.</p>
         <p style="margin-top:14px"><a class="btn btn-outline" href="tel:1300596405" data-track="phone">Call us now instead</a></p>
       </div>
     </div>
@@ -210,12 +246,28 @@
 <section class="trustbar" aria-label="Why homeowners trust Premier Windows">
   <div class="dotted" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="tstat"><span class="stars" role="img" aria-label="Rated 4.8 out of 5">★★★★★</span><span class="big">4.8 · 55 reviews</span><small>Verified on Google</small></div>
-    <div class="tstat"><span class="big">Made in Balcatta</span><small>Our own WA factory</small></div>
-    <div class="tstat"><span class="big">German-engineered</span><small>Profile systems</small></div>
-    <div class="tstat"><span class="big">10-year warranty</span><small>Frames, hardware &amp; glazing</small></div>
-    <div class="tstat"><span class="big">AS 2047 · BAL-40</span><small>Fully compliant</small></div>
+    <div class="tstat">
+      <span class="tico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.2l1-5.8L3.5 9.2l5.9-.9L12 3z"/></svg></span>
+      <span class="big">4.8</span><small>55 Reviews</small>
+    </div>
+    <div class="tstat">
+      <span class="tico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M4 21V10l5 3V10l5 3V8l5 3v10"/><path d="M9 21v-4h4v4"/></svg></span>
+      <span class="big">Made in WA</span><small>Balcatta Factory</small>
+    </div>
+    <div class="tstat">
+      <span class="tico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 14.76V5a2 2 0 1 0-4 0v9.76a4 4 0 1 0 4 0z"/></svg></span>
+      <span class="big">Uw 1.55</span><small>SHGC 0.29</small>
+    </div>
+    <div class="tstat">
+      <span class="tico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <span class="big">10-Year</span><small>Warranty*</small>
+    </div>
+    <div class="tstat">
+      <span class="tico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2s6 4 6 10a6 6 0 0 1-12 0c0-2 1-4 2-5 0 2 1 3 2 3 0-3 2-6 2-8z"/></svg></span>
+      <span class="big">BAL-40</span><small>Bushfire Rated</small>
+    </div>
   </div>
+  <p class="trustnote">*10-year warranty on frames, hardware and glazing. Conditions apply.</p>
 </section>
 
 <!-- ============ PROBLEM ============ -->
@@ -234,14 +286,14 @@
       <article class="card card--problem"><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9.5 11.5 12 14l3-4"/></svg></span><h3>Frames that jam &amp; corrode</h3><p>Corroded, painted-shut or warped frames you fight to open — and that look worn out.</p></article>
     </div>
     <div class="seccta">
-      <a class="btn btn-primary btn-lg" href="#quote-form">Get my free quote</a>
+      <a class="btn btn-primary btn-lg" href="#quote-form">Book my free consultation</a>
       <span class="hint">Free measure &amp; quote · no obligation · no hard sell</span>
     </div>
   </div>
 </section>
 
 <!-- ============ BENEFITS ============ -->
-<section class="section" style="background:var(--grey)" aria-labelledby="benefits-h">
+<section class="section" id="benefits" style="background:var(--grey)" aria-labelledby="benefits-h">
   <div class="wrap center">
     <span class="eyebrow">What replacement windows give you back</span>
     <h2 class="h-sec" id="benefits-h">Built for existing Perth homes</h2>
@@ -258,12 +310,12 @@
       <article class="card"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></span><h3>Style that suits</h3><p>Timber-look, aluminium-look and colour finishes — including heritage-sympathetic options.</p></article>
       <article class="card"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg></span><h3>Made for WA</h3><p>Built locally for Perth's UV, heat and coastal salt air — not imported to a generic spec.</p></article>
     </div>
-    <div class="seccta"><a class="btn btn-primary btn-lg" href="#quote-form">Get my free quote</a></div>
+    <div class="seccta"><a class="btn btn-primary btn-lg" href="#quote-form">Book my free consultation</a></div>
   </div>
 </section>
 
 <!-- ============ COMPARISON ============ -->
-<section class="section" aria-labelledby="compare-h">
+<section class="section" id="comparison" aria-labelledby="compare-h">
   <div class="wrap center">
     <span class="eyebrow">The honest comparison</span>
     <h2 class="h-sec" id="compare-h">Why homeowners replace their old windows with Premier uPVC</h2>
@@ -328,7 +380,7 @@
       </table>
     </div>
     <div class="seccta">
-      <a class="btn btn-primary btn-lg" href="#quote-form">See what replacement costs for my home</a>
+      <a class="btn btn-primary btn-lg" href="#quote-form">Book my free consultation</a>
       <span class="hint">Typical Perth replacement window: $1,300–$3,000 supplied &amp; installed · your exact quote is free</span>
     </div>
   </div>
@@ -386,27 +438,28 @@
           <cite>Jessica Wyld — Hamilton Hill, WA</cite>
         </blockquote>
 
-        <p style="margin-top:24px"><a class="btn btn-primary btn-lg" href="#quote-form">Get my free quote</a></p>
+        <p style="margin-top:24px"><a class="btn btn-primary btn-lg" href="#quote-form">Book my free consultation</a></p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ PROCESS ============ -->
-<section class="section" aria-labelledby="process-h">
+<section class="section" id="process" aria-labelledby="process-h">
   <div class="wrap center">
     <span class="eyebrow">Simple, local, no surprises</span>
-    <h2 class="h-sec" id="process-h">How your window replacement works</h2>
+    <h2 class="h-sec" id="process-h">It starts with a free in-home consultation</h2>
     <span class="divider" aria-hidden="true"></span>
+    <p class="lead">Every home faces the weather differently. That's why we visit your home, assess its orientation and aspect, and recommend the right glazing solution for your property — rather than providing a generic quote.</p>
   </div>
   <div class="wrap" style="margin-top:44px">
     <ol class="steps">
-      <li class="step"><span class="n" aria-hidden="true">1</span><h3>Free measure &amp; quote</h3><p>At your home or our Balcatta showroom. We advise — we never pressure.</p></li>
+      <li class="step"><span class="n" aria-hidden="true">1</span><h3>Free in-home consultation</h3><p>We visit your home, assess your orientation and needs, and advise. We never pressure.</p></li>
       <li class="step"><span class="n" aria-hidden="true">2</span><h3>Made in Balcatta</h3><p>Custom-fabricated to your existing openings on German-engineered profiles.</p></li>
       <li class="step"><span class="n" aria-hidden="true">3</span><h3>Removal &amp; installation</h3><p>Our own installers — never subcontractors — remove the old and fit the new.</p></li>
       <li class="step"><span class="n" aria-hidden="true">4</span><h3>Aftercare &amp; warranty</h3><p>Backed by a 10-year warranty and a local WA team that answers the phone.</p></li>
     </ol>
-    <p class="center"><span class="pill"><span aria-hidden="true">🕒</span> Typical timeline: 10–14 weeks from order · most installs completed in 1–4 days on site</span></p>
+    <p class="center"><span class="pill"><span aria-hidden="true">🕒</span> Most installs completed in 1–4 days on site · we respond within 1 business hour</span></p>
   </div>
 </section>
 
@@ -421,7 +474,7 @@
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section class="section" aria-labelledby="reviews-h">
+<section class="section" id="reviews" aria-labelledby="reviews-h">
   <div class="wrap center">
     <span class="eyebrow">Hear from our customers</span>
     <h2 class="h-sec" id="reviews-h">Trusted by Perth homeowners</h2>
@@ -450,7 +503,7 @@
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="section" style="background:var(--grey)" aria-labelledby="faq-h">
+<section class="section" id="faqs" style="background:var(--grey)" aria-labelledby="faq-h">
   <div class="wrap center">
     <span class="eyebrow">Before you enquire</span>
     <h2 class="h-sec" id="faq-h">Replacing your windows: your questions answered</h2>
@@ -467,7 +520,7 @@
     </details>
     <details>
       <summary>How disruptive is the installation?</summary>
-      <div class="a">Most homes are completed in 1–4 days by our own installers, never subcontractors. We remove the old frames, fit the new units, seal, finish and leave the site clean — our Hamilton Hill replacement was finished in four days with zero mess.</div>
+      <div class="a">Most homes are completed in 1–4 days by our own installers, never subcontractors. We remove the old frames, fit the new units, seal, finish and leave the site clean — our Hamilton Hill replacement was finished in four days with zero mess. As a guide, plan for around 10–14 weeks from order to installation while your windows are custom-made in Balcatta.</div>
     </details>
     <details>
       <summary>Will replacement windows actually reduce noise?</summary>
@@ -493,11 +546,11 @@
 </section>
 
 <!-- ============ FINAL CTA ============ -->
-<section class="section final" aria-labelledby="final-h">
+<section class="section final" id="contact" aria-labelledby="final-h">
   <div class="dotted" aria-hidden="true"></div>
   <div class="wrap">
     <div>
-      <span class="eyebrow" style="color:var(--blue)">Your free, no-obligation quote</span>
+      <span class="eyebrow" style="color:var(--blue)">Your free, no-obligation consultation</span>
       <h2 id="final-h">Ready for a quieter, warmer, more energy-efficient home?</h2>
       <p class="lead">Stop paying to heat and cool the street. Replace your old windows with locally made uPVC double glazing — and finally get the comfortable, quiet home you've been going without.</p>
       <ul class="fl">
@@ -509,10 +562,10 @@
     </div>
 
     <div class="fcard">
-      <h2>Get my free quote</h2>
+      <h2>Book my free consultation</h2>
       <p class="fstep">Takes about 60 seconds</p>
-      <p style="color:var(--muted);font-size:14px;margin:10px 0 18px">Tell us what you're replacing and we'll call you back within 1 business hour with the next steps.</p>
-      <a class="btn btn-primary btn-block btn-lg" href="#quote-form">Start my free quote →</a>
+      <p style="color:var(--muted);font-size:14px;margin:10px 0 18px">Tell us about your project and we'll call you back within 1 business hour to arrange your free in-home consultation.</p>
+      <a class="btn btn-primary btn-block btn-lg" href="#quote-form">Book my free consultation →</a>
       <p class="callalt">Prefer to talk? Call <a href="tel:1300596405" data-track="phone">1300 596 405</a></p>
     </div>
   </div>
@@ -542,6 +595,16 @@
       <address>12A Commerce Road,<br>Vasse WA 6280</address>
     </div>
   </div>
+  <nav class="ftnav" aria-label="Page sections">
+    <div class="wrap">
+      <a href="#benefits">Benefits</a>
+      <a href="#comparison">Comparison</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faqs">FAQs</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
   <div class="ftbar">
     <div class="wrap">
       <span>© <span id="yr">2026</span> Premier Windows (WA) Pty Ltd · ABN 56 670 929 594</span>
@@ -551,13 +614,13 @@
 </footer>
 
 <!-- ============ STICKY CTAs ============ -->
-<a class="btn btn-primary sticky-desktop" href="#quote-form">Get my free quote</a>
+<a class="btn btn-primary sticky-desktop" href="#quote-form">Book my free consultation</a>
 <div class="sticky-mobile">
   <a class="btn btn-outline" href="tel:1300596405" data-track="phone">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.93.7 2.85a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.92.34 1.87.57 2.85.7A2 2 0 0 1 22 16.92z"/></svg>
     Call now
   </a>
-  <a class="btn btn-primary" href="#quote-form">Get my free quote</a>
+  <a class="btn btn-primary" href="#quote-form">Book consultation</a>
 </div>
 
 <!-- ============ STRUCTURED DATA ============ -->
@@ -592,6 +655,6 @@
 </script>
 
 <!-- Shared landing-page behaviour: 2-step form, validation, tracking hooks -->
-<script src="/assets/js/premier-lp.js?v=2" defer></script>
+<script src="/assets/js/premier-lp.js?v=3" defer></script>
 </body>
 </html>

@@ -65,6 +65,19 @@
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
+  /* --- COLLECT FORM DATA ---
+     Snapshot every named field so new questions (Project_Type, Project_Size,
+     Timeframe, Priorities) and the step-2 fields flow through to tracking /
+     submission without hardcoding. Multi-value checkbox groups (Priorities)
+     are joined into a single comma-separated value. */
+  function collectData(form){
+    var fd  = new FormData(form);
+    var obj = Object.fromEntries(fd.entries());
+    var multi = fd.getAll('Priorities');
+    if (multi.length) obj.Priorities = multi.join(', ');
+    return obj;
+  }
+
   /* --- SHARED FIELD VALIDATION --- */
   function validate(input){
     var wrap = input.closest('.field'), v = input.value.trim(), ok = !!v;
@@ -91,10 +104,7 @@
 
     next.addEventListener('click', function(){
       step1.hidden = true; step2.hidden = false;
-      ga4('quote_step_1_complete', {
-        replacing: form.replacing ? form.replacing.value : '',
-        qty:       form.qty ? form.qty.value : ''
-      });
+      ga4('quote_step_1_complete', collectData(form));
       var f = step2.querySelector('input'); if (f) f.focus();
     });
 
@@ -119,19 +129,13 @@
         return;
       }
 
-      var data = Object.fromEntries(new FormData(form).entries());
+      var data = collectData(form);
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
 
       /* --- FORM SUBMISSION TRACKING (fires on successful lead) --- */
       function onSuccess(){
-        ga4('generate_lead', {
-          replacing: data.replacing,
-          qty: data.qty,
-          suburb: data.suburb,
-          value: 1,
-          currency: 'AUD'
-        });
+        ga4('generate_lead', Object.assign({value:1, currency:'AUD'}, data));
         adsConversion(TRACKING.AW_LEAD_LABEL, {value:1, currency:'AUD'});
 
         /* --- SUCCESS PAGE REDIRECT --- */
@@ -154,7 +158,7 @@
          .then(function(r){ if(!r.ok) throw new Error('Bad response'); onSuccess(); })
          .catch(function(){
            submitBtn.disabled = false;
-           submitBtn.textContent = 'Get my free quote →';
+           submitBtn.textContent = 'Book my consultation →';
            ga4('quote_form_submit_failed');
          });
       */
