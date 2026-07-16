@@ -210,10 +210,13 @@ tbody tr.verdict th,tbody tr.verdict td{background:#F0F4EC;color:var(--green-dar
 tbody tr.verdict td.hl{background:#E3EEDF}
 
 /* ---------- CASE STUDY / BEFORE-AFTER ---------- */
-.case{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
-.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.ba figure{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--navy-deep);margin:0}
-.ba img{width:100%;aspect-ratio:1/1;object-fit:cover}
+/* Desktop: stack before/after vertically and stretch the image column to the
+   content height so there's no empty space beneath the images. */
+.case{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:stretch}
+.case > div:first-child{display:flex;flex-direction:column}
+.ba{display:grid;grid-template-columns:1fr;grid-auto-rows:1fr;gap:14px;flex:1 1 auto;min-height:0}
+.ba figure{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--navy-deep);margin:0;min-height:0}
+.ba img{width:100%;height:100%;object-fit:cover}
 .ba figcaption{position:absolute;top:12px;left:12px;background:rgba(0,42,79,.88);color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:20px}
 .ba figure.after figcaption{background:var(--blue);color:var(--navy-deep)}
 .ba figure.after{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue)}
@@ -328,6 +331,11 @@ legend .opt{font-weight:400;color:var(--muted);text-transform:none;letter-spacin
   .section{padding-block:56px}
   .hero .wrap,.final .wrap,.case{grid-template-columns:1fr;gap:32px}
   .hero .wrap{padding-block:30px}
+  /* case study back to side-by-side squares on mobile */
+  .case{align-items:start}
+  .case > div:first-child{display:block}
+  .ba{grid-template-columns:1fr 1fr;grid-auto-rows:auto;flex:none}
+  .ba img{aspect-ratio:1/1;height:auto}
   .trustbar .wrap{grid-template-columns:1fr 1fr;gap:16px}
   .tstat{border-right:0}
   /* 5 items in a 2-col grid leaves the last (BAL-40) alone on its row — span & centre it */
@@ -337,13 +345,15 @@ legend .opt{font-weight:400;color:var(--muted);text-transform:none;letter-spacin
   .step:not(:last-child)::after{display:none}
   /* --- MOBILE HEADER REFINEMENT (mobile only — desktop header unchanged) --- */
   .offerbar .wrap{padding-block:5px;gap:4px 12px;line-height:1.3;text-align:center}  /* tighter, centred promo bar */
-  .hdr .wrap{padding-block:9px;gap:10px}               /* more compact header */
-  .hdr .logo img,.hdr .logo .pw-logo{height:38px}
-  .hdr .right{gap:10px}                                /* even phone↔CTA gap  */
-  .tel{font-size:14.5px;gap:6px}
+  .hdr .wrap{padding-block:9px;gap:8px;padding-inline:14px}   /* compact header, extra horizontal room */
+  .hdr .logo{flex-shrink:0}                                  /* never squish the logo */
+  .hdr .logo img,.hdr .logo .pw-logo{height:30px}
+  .hdr .right{gap:8px;flex-shrink:0}
+  .tel{font-size:12.5px;gap:5px;flex-shrink:0}
+  .tel svg{width:16px;height:16px}
   .tel small{display:none}
-  /* proportional single-line CTA — no more multi-line wrapping */
-  .hdr .right .btn{padding:9px 15px;min-height:38px;font-size:11.5px;letter-spacing:.04em;white-space:nowrap}
+  /* compact single-line CTA — logo + phone + button fit within the viewport */
+  .hdr .right .btn{padding:8px 9px;min-height:34px;font-size:9.5px;letter-spacing:.01em;white-space:nowrap;flex-shrink:0}
   /* section nav → horizontally scrollable strip on mobile */
   .secnav .wrap{justify-content:flex-start;overflow-x:auto;gap:0;padding-inline:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .secnav .wrap::-webkit-scrollbar{display:none}
@@ -368,6 +378,11 @@ legend .opt{font-weight:400;color:var(--muted);text-transform:none;letter-spacin
   .sticky-mobile{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;inset:auto 0 0 0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 14px;box-shadow:0 -6px 24px -8px rgba(0,42,79,.25)}
   .sticky-mobile .btn{padding:16px 8px;font-size:13px;min-height:54px}
   body{padding-bottom:78px}
+}
+/* very small phones (<360px): show the phone as an icon only so the header
+   never overflows — the number stays one tap away and is in the footer + sticky bar */
+@media (max-width:359px){
+  .hdr .tel span{display:none}
 }
 @media (max-width:560px){
   .grid4,.grid3,.prodgrid,.assure .wrap,.ftr .wrap,.steps{grid-template-columns:1fr}
