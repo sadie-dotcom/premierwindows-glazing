@@ -210,14 +210,16 @@ tbody tr.verdict th,tbody tr.verdict td{background:#F0F4EC;color:var(--green-dar
 tbody tr.verdict td.hl{background:#E3EEDF}
 
 /* ---------- CASE STUDY / BEFORE-AFTER ---------- */
-/* Desktop: stack before/after vertically and stretch the image column to the
-   content height so there's no empty space beneath the images. */
+/* Desktop: the TEXT column drives the row height; the image column stretches to
+   match it and the two stacked images fill that height via absolute positioning
+   (object-fit:cover) — so both columns are equal height with no blank space on
+   either side. Images are absolute so they never push the column taller than the text. */
 .case{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:stretch}
-.case > div:first-child{display:flex;flex-direction:column}
-.ba{display:grid;grid-template-columns:1fr;grid-auto-rows:1fr;gap:14px;flex:1 1 auto;min-height:0}
+.case > div:first-child{display:grid;grid-template-rows:1fr auto;min-height:0}
+.ba{display:grid;grid-template-rows:1fr 1fr;gap:14px;min-height:0}
 .ba figure{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--navy-deep);margin:0;min-height:0}
-.ba img{width:100%;height:100%;object-fit:cover}
-.ba figcaption{position:absolute;top:12px;left:12px;background:rgba(0,42,79,.88);color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:20px}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba figcaption{position:absolute;z-index:2;top:12px;left:12px;background:rgba(0,42,79,.88);color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:20px}
 .ba figure.after figcaption{background:var(--blue);color:var(--navy-deep)}
 .ba figure.after{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue)}
 .bacap{text-align:center;color:var(--muted);font-size:12.5px;margin-top:12px}
@@ -334,8 +336,8 @@ legend .opt{font-weight:400;color:var(--muted);text-transform:none;letter-spacin
   /* case study back to side-by-side squares on mobile */
   .case{align-items:start}
   .case > div:first-child{display:block}
-  .ba{grid-template-columns:1fr 1fr;grid-auto-rows:auto;flex:none}
-  .ba img{aspect-ratio:1/1;height:auto}
+  .ba{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .ba img{position:static;aspect-ratio:1/1;height:auto}
   .trustbar .wrap{grid-template-columns:1fr 1fr;gap:16px}
   .tstat{border-right:0}
   /* 5 items in a 2-col grid leaves the last (BAL-40) alone on its row — span & centre it */
