@@ -65,6 +65,31 @@
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
+  /* --- PRODUCT SLIDER(S) ---
+     Horizontal, scroll-snap carousel. Native touch-swipe on mobile; prev/next
+     arrows on desktop, disabled at each end. No-op if no slider on the page. */
+  document.querySelectorAll('.prodslider-wrap').forEach(function(wrap){
+    var slider = wrap.querySelector('.prodslider');
+    var prev = wrap.querySelector('.slidebtn.prev');
+    var next = wrap.querySelector('.slidebtn.next');
+    if (!slider || !prev || !next) return;
+
+    function step(){
+      var card = slider.querySelector('.prod');
+      return card ? card.getBoundingClientRect().width + 18 : 300;
+    }
+    function update(){
+      var max = slider.scrollWidth - slider.clientWidth - 2;
+      prev.disabled = slider.scrollLeft <= 2;
+      next.disabled = slider.scrollLeft >= max;
+    }
+    prev.addEventListener('click', function(){ slider.scrollBy({left:-step()*2, behavior:'smooth'}); });
+    next.addEventListener('click', function(){ slider.scrollBy({left: step()*2, behavior:'smooth'}); });
+    slider.addEventListener('scroll', function(){ requestAnimationFrame(update); }, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  });
+
   /* --- COLLECT FORM DATA ---
      Snapshot every named field so new questions (Project_Type, Project_Size,
      Timeframe, Priorities) and the step-2 fields flow through to tracking /

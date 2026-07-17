@@ -41,19 +41,10 @@
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/karla-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/karla-bold.woff2" crossorigin>
 
-<link rel="stylesheet" href="/assets/css/premier.css?v=9">
+<link rel="stylesheet" href="/assets/css/premier.css?v=10">
 </head>
 <body>
 <a class="skip" href="#quote-form">Skip to consultation form</a>
-
-<!-- ============ OFFER BAR ============ -->
-<div class="offerbar">
-  <div class="wrap">
-    <span>Winter offer — up to <b>$1,500 Bunnings gift card</b> with your order</span>
-    <span class="chip">10 left</span>
-    <a href="https://premierwindows.com.au/terms-conditions/" target="_blank" rel="noopener">See terms</a>
-  </div>
-</div>
 
 <!-- ============ HEADER: logo + phone + CTA, with section nav ============ -->
 <header class="hdr">
@@ -72,6 +63,7 @@
   <nav class="secnav" aria-label="Page sections">
     <div class="wrap">
       <a href="#benefits">Benefits</a>
+      <a href="#showroom">Showroom</a>
       <a href="#products">Products</a>
       <a href="#comparison">Comparison</a>
       <a href="#process">Process</a>
@@ -95,9 +87,9 @@
 
   <div class="wrap">
     <div>
-      <span class="eyebrow">South West WA · Made in Balcatta · Installed by experts</span>
-      <h1 id="hero-h1">Cut energy bills by up to <span class="accent">40%</span>. Block up to <span class="accent">70%</span> of the noise.</h1>
-      <p class="sub">European-quality uPVC double glazing, locally made in Balcatta and expertly installed across the South West — Busselton, Vasse, Dunsborough and beyond. Book your free, no-obligation in-home consultation today.</p>
+      <span class="eyebrow">Southwest WA · Locally made · Vasse showroom</span>
+      <h1 id="hero-h1">Warmer, quieter SouthWest homes — <span class="accent">double glazing made in WA</span>, fitted from Bunbury to Margaret River.</h1>
+      <p class="sub">European-quality uPVC double glazing for South West homes — from Bunbury, Busselton, Vasse, Dunsborough through to Margaret River. Made in WA, fitted by our own team, and on display at our Vasse showroom. Book a free in-home consultation, or come and see it for yourself.</p>
 
       <!-- Google Reviews — prominent -->
       <div class="gwrap">
@@ -112,16 +104,14 @@
       </div>
 
       <ul class="usp">
-        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Made in Balcatta, WA</li>
-        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>10-year warranty</li>
-        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No hard sell — expert advice</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Local Vasse showroom — see and feel it in person</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fitted across the South West by our own WA team</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>10-year warranty · no hard sell</li>
       </ul>
     </div>
 
     <!-- ============ CONSULTATION FORM (reuses shared premier-lp.js) ============ -->
     <div class="fcard" id="quote-form">
-      <p class="offer-chip"><span aria-hidden="true">🎁</span> Winter offer — up to $1,500 Bunnings gift card</p>
-
       <form id="quoteForm" novalidate>
         <div data-step="1">
           <h2>Book my free consultation</h2>
@@ -259,8 +249,8 @@
 <!-- ============ BENEFITS ============ -->
 <section class="section" id="benefits" aria-labelledby="benefits-h">
   <div class="wrap center">
-    <span class="eyebrow">Why homeowners in WA choose Premier</span>
-    <h2 class="h-sec" id="benefits-h">The smart upgrade for Perth homes</h2>
+    <span class="eyebrow">Why homeowners choose Premier</span>
+    <h2 class="h-sec" id="benefits-h">Double glazing built for Southwest living</h2>
     <span class="divider" aria-hidden="true"></span>
   </div>
   <div class="wrap" style="margin-top:40px">
@@ -281,44 +271,50 @@
   </div>
 </section>
 
+<!-- ============ VISIT OUR VASSE SHOWROOM ============ -->
+<section class="section" id="showroom" style="background:var(--sky)" aria-labelledby="showroom-h">
+  <div class="wrap showroomsec">
+    <div class="showroomsec__img">
+      <img src="/assets/images/vasse-showroom-1000.webp"
+           srcset="/assets/images/vasse-showroom-700.webp 700w, /assets/images/vasse-showroom-1000.webp 1000w"
+           sizes="(max-width:960px) 100vw, 50vw"
+           alt="The Premier Windows &amp; Doors Vasse showroom in the South West of WA"
+           width="1000" height="667" loading="lazy" decoding="async">
+    </div>
+    <div class="showroomsec__body">
+      <span class="eyebrow">Come and see for yourself</span>
+      <h2 class="h-sec" id="showroom-h">Visit our Vasse showroom</h2>
+      <span class="divider" aria-hidden="true"></span>
+      <p class="lead">Photos only tell you so much. At our Vasse showroom you can run a tilt &amp; turn window through its full motion, glide a stacking door on its hidden track, compare frame finishes and colours side by side, and feel the difference double glazing actually makes — with a local South West specialist to answer everything, no pressure and no hard sell.</p>
+      <p style="margin-top:22px"><a class="btn btn-primary btn-lg" href="#quote-form">Book my free consultation</a></p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PRODUCT RANGE ============ -->
 <section class="section" id="products" style="background:var(--grey)" aria-labelledby="range-h">
   <div class="wrap center">
     <span class="eyebrow">Our uPVC range</span>
-    <h2 class="h-sec" id="range-h">Double glazed windows &amp; doors for Perth homes</h2>
+    <h2 class="h-sec" id="range-h">The moment it goes quiet, you'll get it.</h2>
     <span class="divider" aria-hidden="true"></span>
-    <p class="lead">All windows &amp; doors are locally made in Balcatta, steel-reinforced and double glazed for up to 40% energy savings &amp; 70% noise reduction.</p>
+    <p class="lead">But quiet is only the start. Every Premier frame is made in WA and engineered for the way we live down here — cutting energy bills, shrugging off coastal salt air, and looking sharp for decades with next to no upkeep. Here's what Southwest homeowners get as standard.</p>
   </div>
   <div class="wrap" style="margin-top:40px">
-    <div class="prodgrid">
-      <article class="prod">
-        <div class="pimg">
-          <img src="/assets/images/product-tilt-turn.webp" alt="Premier uPVC tilt &amp; turn window tilted open to the sky" width="760" height="530" loading="lazy" decoding="async">
-          <span class="plabel">Tilt &amp; turn windows</span>
-        </div>
-        <div class="pbody"><h3>Tilt &amp; turn windows</h3><p>Tilt for ventilation, turn for easy cleaning. Secure and child-safe.</p></div>
-      </article>
-      <article class="prod">
-        <div class="pimg">
-          <img src="/assets/images/product-smart-slide.webp" alt="Premier uPVC smart slide doors — floor-to-ceiling glazing opening to a rural view" width="760" height="563" loading="lazy" decoding="async">
-          <span class="plabel">Smart slide doors</span>
-        </div>
-        <div class="pbody"><h3>Smart slide doors</h3><p>Glides on hidden tracks — ideal for alfresco and efficiency.</p></div>
-      </article>
-      <article class="prod">
-        <div class="pimg">
-          <img src="/assets/images/product-casement.webp" alt="Premier uPVC casement windows opening above a freestanding bath" width="760" height="406" loading="lazy" decoding="async">
-          <span class="plabel">Casement windows</span>
-        </div>
-        <div class="pbody"><h3>Casement windows</h3><p>Side-hinged, opens fully. Maximum airflow and clear views.</p></div>
-      </article>
-      <article class="prod">
-        <div class="pimg">
-          <img src="/assets/images/product-stacking.webp" alt="Premier uPVC stacking doors opening a home wide to a paved courtyard" width="760" height="545" loading="lazy" decoding="async">
-          <span class="plabel">Stacking doors</span>
-        </div>
-        <div class="pbody"><h3>Stacking doors</h3><p>Maximise space and style with wide, contemporary openings.</p></div>
-      </article>
+    <div class="prodslider-wrap">
+      <button class="slidebtn prev" type="button" aria-label="Previous products"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="prodslider" role="group" aria-label="Premier product range">
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-tilt-turn.webp" alt="Premier uPVC tilt &amp; turn window tilted open to the sky" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">Tilt &amp; turn windows</span></div><div class="pbody"><h3>Tilt &amp; turn windows</h3><p>Tilt for ventilation, turn for easy cleaning. Secure and child-safe.</p></div></article>
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-smart-slide.webp" alt="Premier uPVC smart slide doors opening to a rural view" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">Smart slide doors</span></div><div class="pbody"><h3>Smart slide doors</h3><p>Glides on hidden tracks — ideal for alfresco and efficiency.</p></div></article>
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-casement.webp" alt="Premier uPVC casement windows opening above a freestanding bath" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">Casement windows</span></div><div class="pbody"><h3>Casement windows</h3><p>Side-hinged, opens fully. Maximum airflow and clear views.</p></div></article>
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-stacking.webp" alt="Premier uPVC stacking doors opening to a paved courtyard" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">Stacking doors</span></div><div class="pbody"><h3>Stacking doors</h3><p>Maximise space and style with wide, contemporary openings.</p></div></article>
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-awning.webp" alt="Premier uPVC awning windows in a bright living room" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">Awning windows</span></div><div class="pbody"><h3>Awning windows</h3><p>Top-hinged to open outward — fresh airflow, even in the rain.</p></div></article>
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-entry-door.webp" alt="Premier uPVC timber-look entry door with glass side panels" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">Entry doors</span></div><div class="pbody"><h3>Entry doors</h3><p>A secure, thermally efficient welcome in timber-look or colour.</p></div></article>
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-french-door.webp" alt="Premier uPVC French doors opening onto a garden" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">French doors</span></div><div class="pbody"><h3>French doors</h3><p>Classic double doors that open wide and bring the outside in.</p></div></article>
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-lift-slide.webp" alt="Premier uPVC lift &amp; slide doors to a brick patio" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">Lift &amp; slide doors</span></div><div class="pbody"><h3>Lift &amp; slide doors</h3><p>Large panels that glide effortlessly and seal tight when closed.</p></div></article>
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-vario-slide-window.webp" alt="Premier uPVC vario slide window in a modern kitchen" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">Vario slide windows</span></div><div class="pbody"><h3>Vario slide windows</h3><p>Slimline sliding sashes with a big, clear, uninterrupted view.</p></div></article>
+        <article class="prod"><div class="pimg"><img src="/assets/images/product-vario-slide-door.webp" alt="Premier uPVC vario slide doors opening to a garden and pool" width="760" height="507" loading="lazy" decoding="async"><span class="plabel">Vario slide doors</span></div><div class="pbody"><h3>Vario slide doors</h3><p>Space-saving sliders for easy, everyday indoor-outdoor living.</p></div></article>
+      </div>
+      <button class="slidebtn next" type="button" aria-label="Next products"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
     <p class="rangenote">Tilt &amp; turn · Sliding · Casement · Awning · Smart slide · Vario slide · Lift &amp; slide · Entry · French · Stacking — all double glazed &amp; included in your quote.</p>
   </div>
@@ -328,7 +324,7 @@
 <section class="section" id="comparison" aria-labelledby="compare-h">
   <div class="wrap center">
     <span class="eyebrow">The honest comparison</span>
-    <h2 class="h-sec" id="compare-h">uPVC vs aluminium &amp; timber in Perth</h2>
+    <h2 class="h-sec" id="compare-h">Premier uPVC double glazing vs aluminium &amp; timber frame windows</h2>
     <span class="divider" aria-hidden="true"></span>
   </div>
   <div class="wrap" style="margin-top:38px">
@@ -417,7 +413,7 @@
 <section class="section" id="reviews" aria-labelledby="reviews-h">
   <div class="wrap center">
     <span class="eyebrow">Hear from our customers</span>
-    <h2 class="h-sec" id="reviews-h">Trusted by Perth homeowners</h2>
+    <h2 class="h-sec" id="reviews-h">The upgrade homeowners keep recommending</h2>
     <span class="divider" aria-hidden="true"></span>
   </div>
   <div class="wrap" style="margin-top:40px">
@@ -487,7 +483,6 @@
       <p class="lead">Book your free, no-obligation in-home consultation — we'll respond within 1 business hour. Locally made, expertly installed, guaranteed for 10 years.</p>
       <ul class="fl">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>An expert in-home assessment — not a generic quote</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Up to a $1,500 Bunnings gift card with your order</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Made in Balcatta · fitted by our own team · 10-year warranty</li>
       </ul>
       <p class="finaltel">Or call us now: <a href="tel:1300596405" data-track="phone">1300 596 405</a></p>
@@ -619,7 +614,7 @@
     </div>
     <div>
       <h2>South West showroom</h2>
-      <address>12A Commerce Road,<br>Vasse WA 6280<br><span class="fthours">Mon–Fri: By Appt<br>Sat–Sun: By Appt</span></address>
+      <address>12A Commerce Road,<br>Vasse WA 6280<br><span class="fthours">(By Appointment)</span></address>
     </div>
     <div>
       <h2>Perth showroom</h2>
@@ -629,6 +624,7 @@
   <nav class="ftnav" aria-label="Page sections">
     <div class="wrap">
       <a href="#benefits">Benefits</a>
+      <a href="#showroom">Showroom</a>
       <a href="#products">Products</a>
       <a href="#comparison">Comparison</a>
       <a href="#process">Process</a>
@@ -646,13 +642,13 @@
 </footer>
 
 <!-- ============ STICKY CTAs ============ -->
-<a class="btn btn-primary sticky-desktop" href="#quote-form">Book my free consultation</a>
+<a class="btn btn-primary sticky-desktop" href="#quote-form">Receive my free quotation</a>
 <div class="sticky-mobile">
   <a class="btn btn-outline" href="tel:1300596405" data-track="phone">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.93.7 2.85a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.92.34 1.87.57 2.85.7A2 2 0 0 1 22 16.92z"/></svg>
     Call now
   </a>
-  <a class="btn btn-primary" href="#quote-form">Book consultation</a>
+  <a class="btn btn-primary" href="#quote-form">Free quotation</a>
 </div>
 
 <!-- ============ STRUCTURED DATA ============ -->
@@ -687,6 +683,6 @@
 </script>
 
 <!-- Shared landing-page behaviour: 2-step form, validation, tracking hooks -->
-<script src="/assets/js/premier-lp.js?v=3" defer></script>
+<script src="/assets/js/premier-lp.js?v=4" defer></script>
 </body>
 </html>

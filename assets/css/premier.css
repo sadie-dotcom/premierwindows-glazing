@@ -193,6 +193,24 @@ legend,.flabel{font-weight:700;font-size:13px;color:var(--navy);margin:14px 0 8p
 .prod p{color:var(--muted);font-size:13.5px}
 .rangenote{text-align:center;color:var(--muted);font-size:13.5px;margin-top:26px}
 
+/* ---------- PRODUCT SLIDER (horizontal, swipeable carousel) ---------- */
+.prodslider-wrap{position:relative}
+.prodslider{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.prodslider::-webkit-scrollbar{display:none}
+.prodslider .prod{flex:0 0 280px;scroll-snap-align:start}
+.prodslider .prod:hover{transform:none}   /* keep the row stable while scrolling */
+.slidebtn{position:absolute;top:46%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow);transition:background .15s,color .15s,opacity .2s}
+.slidebtn:hover{background:var(--navy);color:#fff}
+.slidebtn.prev{left:-6px}
+.slidebtn.next{right:-6px}
+.slidebtn[disabled]{opacity:.3;cursor:default;pointer-events:none}
+
+/* ---------- SHOWROOM SPLIT SECTION (SW page) ---------- */
+.showroomsec{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.showroomsec__img img{width:100%;border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow)}
+.showroomsec .divider{margin:14px 0 0}
+.showroomsec .lead{margin-top:16px;max-width:none}
+
 /* ---------- COMPARISON ---------- */
 .tablewrap{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
 table{width:100%;border-collapse:collapse;font-size:14px}
@@ -286,6 +304,8 @@ details .a{padding:0 22px 20px;color:var(--muted);font-size:14.5px}
 
 /* ---------- FOOTER: logo, phone, email, showrooms, ABN, legal ONLY ---------- */
 .ftr{background:var(--navy-deep);color:#A9BFCD;font-size:14px}
+/* subtle horizontal divider above the logo (container width) */
+.ftr > .wrap{border-top:1px solid rgba(255,255,255,.14)}
 .ftr .wrap{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:30px;padding-top:48px;padding-bottom:30px}
 .ftr .logo img,.ftr .logo .pw-logo{height:52px;width:auto;display:block}
 .ftr h2{color:#fff;font-size:13px;letter-spacing:.06em;margin-bottom:10px}
@@ -343,6 +363,11 @@ legend .opt{font-weight:400;color:var(--muted);text-transform:none;letter-spacin
   /* 5 items in a 2-col grid leaves the last (BAL-40) alone on its row — span & centre it */
   .trustbar .wrap > .tstat:last-child{grid-column:1 / -1}
   .grid4,.grid3,.prodgrid,.assure .wrap,.ftr .wrap{grid-template-columns:1fr 1fr}
+  /* product slider: swipe only, wider cards on mobile */
+  .slidebtn{display:none}
+  .prodslider .prod{flex-basis:78vw;max-width:300px}
+  /* showroom split → stacked */
+  .showroomsec{grid-template-columns:1fr;gap:24px}
   .steps{grid-template-columns:1fr 1fr;gap:28px}
   .step:not(:last-child)::after{display:none}
   /* --- MOBILE HEADER REFINEMENT (mobile only — desktop header unchanged) --- */
