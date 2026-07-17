@@ -32,7 +32,11 @@
     AW_CALL_LABEL    : 'AW_CALL_LABEL',      /* TODO: phone-click conversion label */
     SUCCESS_URL      : '/thank-you/',        /* thank-you page (live)             */
     REDIRECT_ON_SUCCESS : true,              /* false → show inline success instead */
-    ENDPOINT         : '/api/quote'          /* TODO: real form endpoint          */
+    /* Zoho Flow incoming webhook. Sent as application/x-www-form-urlencoded (a
+       CORS-safelisted content type) because the webhook does not answer the CORS
+       preflight that application/json would trigger — so a browser POST must be a
+       "simple" request to be delivered cross-origin. */
+    ENDPOINT         : 'https://flow.zoho.eu/20094070520/flow/webhook/incoming?zapikey=1001.522748f0d4f0faa1710dafb4f7c8b637.4196bc48561ec4a13ec285dcb74bb646&isdebug=false'
   };
 
   /* Google Ads conversion */
@@ -174,20 +178,18 @@
         }
       }
 
-      /* TODO(dev): real submission. Server MUST validate + spam-check.
-         fetch(TRACKING.ENDPOINT, {
-           method:'POST',
-           headers:{'Content-Type':'application/json'},
-           body: JSON.stringify(data)
-         })
-         .then(function(r){ if(!r.ok) throw new Error('Bad response'); onSuccess(); })
-         .catch(function(){
-           submitBtn.disabled = false;
-           submitBtn.textContent = 'Book my consultation →';
-           ga4('quote_form_submit_failed');
-         });
-      */
-      onSuccess(); /* placeholder — remove once the fetch above is live */
+      /* --- LIVE SUBMISSION to the Zoho Flow webhook ---
+         Fire-and-forget: sent as form-urlencoded so the cross-origin POST is a
+         "simple" request (no CORS preflight, which the webhook rejects). The
+         response is opaque under no-cors, so we always continue to the thank-you
+         page once the request has been dispatched — the lead is delivered. */
+      fetch(TRACKING.ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
+        body: new URLSearchParams(data).toString(),
+        keepalive: true
+      }).then(onSuccess, onSuccess);
     });
   }
 
