@@ -318,7 +318,7 @@ details .a{padding:0 22px 20px;color:var(--muted);font-size:14.5px}
 /* subtle horizontal divider above the logo — spans the full page width */
 .ftr{background:var(--navy-deep);color:#A9BFCD;font-size:14px;border-top:1px solid rgba(255,255,255,.14)}
 /* social media icons */
-.ftsocial{display:flex;gap:14px;margin-top:16px}
+.ftsocial{display:flex;gap:14px;margin-top:28px}
 .ftsocial a{color:#A9BFCD;display:inline-flex;transition:color .15s}
 .ftsocial a:hover,.ftsocial a:focus-visible{color:#fff}
 .ftsocial svg{width:22px;height:22px}
