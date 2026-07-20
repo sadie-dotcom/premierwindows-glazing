@@ -41,7 +41,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/karla-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/karla-bold.woff2" crossorigin>
 
-<link rel="stylesheet" href="/assets/css/premier.css?v=11">
+<link rel="stylesheet" href="/assets/css/premier.css?v=12">
 </head>
 <body>
 <a class="skip" href="#quote-form">Skip to consultation form</a>
@@ -57,7 +57,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.93.7 2.85a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.92.34 1.87.57 2.85.7A2 2 0 0 1 22 16.92z"/></svg>
         <span>1300 596 405<small>Speak to our local WA team</small></span>
       </a>
-      <a class="btn btn-primary" href="#quote-form"><span class="u-desktop">Book my free consultation</span><span class="u-mobile">Book consultation</span></a>
+      <a class="btn btn-primary" href="https://premierwindows.com.au/southwest/" target="_blank" rel="noopener"><span class="u-desktop">Book home consultation</span><span class="u-mobile">Home consultation</span></a>
     </div>
   </div>
   <nav class="secnav" aria-label="Page sections">
@@ -88,7 +88,7 @@
   <div class="wrap">
     <div>
       <span class="eyebrow">Southwest WA · Locally made · Vasse showroom</span>
-      <h1 id="hero-h1">Warmer, quieter SouthWest homes — <span class="accent">double glazing made in WA</span>, fitted from Bunbury to Margaret River.</h1>
+      <h1 id="hero-h1">Southwest homes: <span class="accent">cooler in summer, warmer in winter</span>.</h1>
       <p class="sub">European-quality uPVC double glazing for South West homes — from Bunbury, Busselton, Vasse, Dunsborough through to Margaret River. Made in WA, fitted by our own team, and on display at our Vasse showroom. Book a free in-home consultation, or come and see it for yourself.</p>
 
       <!-- Google Reviews — prominent -->
@@ -98,7 +98,7 @@
           <span class="num">4.8</span>
           <span>
             <span class="stars" role="img" aria-label="Rated 4.8 out of 5">★★★★★</span>
-            <span class="cnt">from 55 Perth homeowners</span>
+            <span class="cnt">from 55 WA homeowners</span>
           </span>
         </span>
       </div>
@@ -114,7 +114,7 @@
     <div class="fcard" id="quote-form">
       <form id="quoteForm" novalidate>
         <div data-step="1">
-          <h2>Book my free consultation</h2>
+          <h2>Receive my free quotation</h2>
           <p class="fstep">Step 1 of 2 · about 60 seconds</p>
           <div class="progress"><i id="progressBar"></i></div>
 
@@ -186,6 +186,11 @@
             <p class="err">Please enter your first name</p>
           </div>
           <div class="field">
+            <label class="sr-only" for="last-name">Last name</label>
+            <input type="text" id="last-name" name="Last_Name" placeholder="Last name" autocomplete="family-name" required>
+            <p class="err">Please enter your last name</p>
+          </div>
+          <div class="field">
             <label class="sr-only" for="phone">Phone number</label>
             <input type="tel" id="phone" name="Phone" placeholder="Phone number" autocomplete="tel" inputmode="tel" required>
             <p class="err">Please enter a valid phone number</p>
@@ -195,13 +200,8 @@
             <input type="email" id="email" name="Email" placeholder="Email address" autocomplete="email" inputmode="email" required>
             <p class="err">Please enter a valid email address</p>
           </div>
-          <div class="field">
-            <label class="sr-only" for="suburb">Suburb</label>
-            <input type="text" id="suburb" name="Suburb" placeholder="Suburb" autocomplete="address-level2" required>
-            <p class="err">Please enter your suburb</p>
-          </div>
 
-          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn" style="margin-top:18px">Book my consultation →</button>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn" style="margin-top:18px">Receive my free quotation →</button>
           <button type="button" class="back" id="backTo1">← Back</button>
           <p class="micro">🔒 We respond within 1 business hour. By submitting you agree to be contacted by Premier Windows. Opt out anytime.</p>
         </div>
@@ -250,7 +250,7 @@
 <section class="section" id="benefits" aria-labelledby="benefits-h">
   <div class="wrap center">
     <span class="eyebrow">Why homeowners choose Premier</span>
-    <h2 class="h-sec" id="benefits-h">Double glazing built for Southwest living</h2>
+    <h2 class="h-sec" id="benefits-h">The smart upgrade for Southwest homes</h2>
     <span class="divider" aria-hidden="true"></span>
   </div>
   <div class="wrap" style="margin-top:40px">
@@ -295,9 +295,9 @@
 <section class="section" id="products" style="background:var(--grey)" aria-labelledby="range-h">
   <div class="wrap center">
     <span class="eyebrow">Our uPVC range</span>
-    <h2 class="h-sec" id="range-h">The moment it goes quiet, you'll get it.</h2>
+    <h2 class="h-sec" id="range-h">Double glazing built for Southwest living</h2>
     <span class="divider" aria-hidden="true"></span>
-    <p class="lead">But quiet is only the start. Every Premier frame is made in WA and engineered for the way we live down here — cutting energy bills, shrugging off coastal salt air, and looking sharp for decades with next to no upkeep. Here's what Southwest homeowners get as standard.</p>
+    <p class="lead">Every window and door is made in WA, steel-reinforced and double glazed as standard — cutting energy bills by up to 40% and outside noise by up to 70%. Built to handle the Southwest's coastal salt air, summer heat and cool nights.</p>
   </div>
   <div class="wrap" style="margin-top:40px">
     <div class="prodslider-wrap">
@@ -378,7 +378,7 @@
           </tr>
           <tr class="verdict">
             <th scope="row">Winner for WA homes</th>
-            <td data-label="Why" colspan="2">Mid-range cost, zero upkeep, superior performance in Perth's heat &amp; coastal air.</td>
+            <td data-label="Why" colspan="2">Mid-range cost, zero upkeep, superior performance in the Southwest's heat &amp; coastal air.</td>
             <td data-label="Winner" class="hl">✓ uPVC (Premier)</td>
           </tr>
         </tbody>
@@ -434,7 +434,7 @@
         <footer><span class="av" aria-hidden="true">JS</span><span><b>Jacquelyn Smith</b><span>Window replacement · Perth</span></span></footer>
       </article>
     </div>
-    <p class="revfoot"><span class="stars" role="img" aria-label="Rated 4.8 out of 5">★★★★★</span> 4.8 from Perth homeowners · Made locally in our factory · Supply or full installation</p>
+    <p class="revfoot"><span class="stars" role="img" aria-label="Rated 4.8 out of 5">★★★★★</span> 4.8 from WA homeowners · Made locally in our factory · Supply or full installation</p>
   </div>
 </section>
 
@@ -442,12 +442,12 @@
 <section class="section" id="faqs" style="background:var(--grey)" aria-labelledby="faq-h">
   <div class="wrap center">
     <span class="eyebrow">Before you enquire</span>
-    <h2 class="h-sec" id="faq-h">Double glazing Perth FAQs</h2>
+    <h2 class="h-sec" id="faq-h">Double Glazing Southwest FAQs</h2>
     <span class="divider" aria-hidden="true"></span>
   </div>
   <div class="wrap faq" style="margin-top:38px">
     <details open>
-      <summary>How much does uPVC double glazing cost in Perth?</summary>
+      <summary>How much does uPVC double glazing cost in the Southwest?</summary>
       <div class="a">Average cost is $1,300–$3,000 per window supplied and installed; a typical 3-bedroom home runs $8,000–$15,000. Every home is custom, so your quote is exact and free.</div>
     </details>
     <details>
@@ -479,11 +479,11 @@
   <div class="wrap">
     <div>
       <span class="eyebrow" style="color:var(--blue)">Book a consultation</span>
-      <h2 id="final-h">Ready for a quieter, cooler home?</h2>
+      <h2 id="final-h">Ready for a home that's cooler in summer, warmer in winter?</h2>
       <p class="lead">Book your free, no-obligation in-home consultation — we'll respond within 1 business hour. Locally made, expertly installed, guaranteed for 10 years.</p>
       <ul class="fl">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>An expert in-home assessment — not a generic quote</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Made in Balcatta · fitted by our own team · 10-year warranty</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Made in WA · fitted by our own team · 10-year warranty</li>
       </ul>
       <p class="finaltel">Or call us now: <a href="tel:1300596405" data-track="phone">1300 596 405</a></p>
     </div>
@@ -494,7 +494,7 @@
     <div class="fcard">
       <form data-quote-form novalidate>
         <div data-step="1">
-          <h2>Book my free consultation</h2>
+          <h2>Receive my free quotation</h2>
           <p class="fstep">Step 1 of 2 · about 60 seconds</p>
           <div class="progress"><i></i></div>
 
@@ -566,6 +566,11 @@
             <p class="err">Please enter your first name</p>
           </div>
           <div class="field">
+            <label class="sr-only" for="last-name-2">Last name</label>
+            <input type="text" id="last-name-2" name="Last_Name" placeholder="Last name" autocomplete="family-name" required>
+            <p class="err">Please enter your last name</p>
+          </div>
+          <div class="field">
             <label class="sr-only" for="phone-2">Phone number</label>
             <input type="tel" id="phone-2" name="Phone" placeholder="Phone number" autocomplete="tel" inputmode="tel" required>
             <p class="err">Please enter a valid phone number</p>
@@ -575,13 +580,8 @@
             <input type="email" id="email-2" name="Email" placeholder="Email address" autocomplete="email" inputmode="email" required>
             <p class="err">Please enter a valid email address</p>
           </div>
-          <div class="field">
-            <label class="sr-only" for="suburb-2">Suburb</label>
-            <input type="text" id="suburb-2" name="Suburb" placeholder="Suburb" autocomplete="address-level2" required>
-            <p class="err">Please enter your suburb</p>
-          </div>
 
-          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:18px">Book my consultation →</button>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:18px">Receive my free quotation →</button>
           <button type="button" class="back" data-back>← Back</button>
           <p class="micro">🔒 We respond within 1 business hour. By submitting you agree to be contacted by Premier Windows. Opt out anytime.</p>
         </div>
@@ -604,6 +604,12 @@
   <div class="wrap">
     <div>
       <span class="logo"><img src="/assets/images/premier-logo-white.svg" width="153" height="54" alt="Premier Windows &amp; Doors"></span>
+      <div class="ftsocial">
+        <a href="https://www.facebook.com/people/Premier-Windows/61554646870575/" target="_blank" rel="noopener" aria-label="Premier Windows on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h2.7l.4-3H13V9.1c0-.9.3-1.5 1.6-1.5H16.2V5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4V11H7.2v3h2.6v8h3.2z"/></svg></a>
+        <a href="https://www.instagram.com/premierwindows_aus/" target="_blank" rel="noopener" aria-label="Premier Windows on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.linkedin.com/company/101085029" target="_blank" rel="noopener" aria-label="Premier Windows on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H4V20h2.94V8.5zM5.47 3.8a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zM20 20h-2.94v-5.86c0-1.47-.53-2.47-1.84-2.47-1 0-1.6.68-1.87 1.33-.1.24-.12.56-.12.89V20H10.3s.04-10.4 0-11.5h2.93v1.63c.39-.6 1.09-1.46 2.66-1.46 1.94 0 3.4 1.27 3.4 4z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UC85SBKfb20zLgM5v6tgvkkw" target="_blank" rel="noopener" aria-label="Premier Windows on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.4-.43-5a2.6 2.6 0 0 0-1.83-1.84C19.14 4.7 12 4.7 12 4.7s-7.14 0-8.74.46A2.6 2.6 0 0 0 1.43 7C1 8.6 1 12 1 12s0 3.4.43 5a2.6 2.6 0 0 0 1.83 1.84c1.6.46 8.74.46 8.74.46s7.14 0 8.74-.46A2.6 2.6 0 0 0 22.57 17C23 15.4 23 12 23 12zM9.75 15.02V8.98L15.5 12z"/></svg></a>
+      </div>
     </div>
     <div>
       <h2>Contact</h2>
@@ -656,7 +662,7 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"LocalBusiness","@id":"https://premierwindows.com.au/#business","name":"Premier Windows & Doors","description":"uPVC double glazed windows and doors, locally manufactured in Balcatta and installed across Perth and the South West of Western Australia.","telephone":"1300596405","email":"hello@premierwindows.au","priceRange":"$$$","areaServed":[{"@type":"City","name":"Perth"},{"@type":"State","name":"Western Australia"}],"address":[{"@type":"PostalAddress","streetAddress":"20 Gibberd Road","addressLocality":"Balcatta","addressRegion":"WA","postalCode":"6021","addressCountry":"AU"},{"@type":"PostalAddress","streetAddress":"12A Commerce Road","addressLocality":"Vasse","addressRegion":"WA","postalCode":"6280","addressCountry":"AU"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"55","bestRating":"5"}},
 {"@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How much does uPVC double glazing cost in Perth?","acceptedAnswer":{"@type":"Answer","text":"Average cost is $1,300–$3,000 per window supplied and installed; a typical 3-bedroom home runs $8,000–$15,000. Every home is custom, so your quote is exact and free."}},
+{"@type":"Question","name":"How much does uPVC double glazing cost in the Southwest?","acceptedAnswer":{"@type":"Answer","text":"Average cost is $1,300–$3,000 per window supplied and installed; a typical 3-bedroom home runs $8,000–$15,000. Every home is custom, so your quote is exact and free."}},
 {"@type":"Question","name":"How long does installation take?","acceptedAnswer":{"@type":"Answer","text":"Most homes are fitted in 1–4 days by our own trained teams. As a guide, plan for around 10–14 weeks from order to installation while your windows are custom-made in Balcatta."}},
 {"@type":"Question","name":"Does double glazing improve home security?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every Premier frame has multi-point locking and reinforced steel cores as standard, and our double glazed units meet AS 2047."}},
 {"@type":"Question","name":"What energy ratings do your windows meet?","acceptedAnswer":{"@type":"Answer","text":"Our Low-E, argon-filled double glazed units reach U-values as low as 1.55 W/m²K (7-star NatHERS) and comply with AS 2047 and AS 1288."}},
