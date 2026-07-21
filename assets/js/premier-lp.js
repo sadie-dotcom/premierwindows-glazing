@@ -104,6 +104,10 @@
     var obj = Object.fromEntries(fd.entries());
     var multi = fd.getAll('Priorities');
     if (multi.length) obj.Priorities = multi.join(', ');
+    /* Extra webhook metadata (does not touch any existing field):
+       a static form identifier + the originating page URL. */
+    obj.Form_Name = 'Premier Glazing – Free Consultation Request';
+    obj.Page_URL  = window.location.href;
     return obj;
   }
 
